@@ -1,0 +1,166 @@
+[
+  {
+    "name": "wheat",
+    "input": [
+      {
+        "resource": "bagOfWheatSeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "wheat",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "carrots",
+    "input": [
+      {
+        "resource": "bagOfCarrots",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "carrot",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "cranberries",
+    "input": [
+      {
+        "resource": "bagOfCranberrySeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "cranberry",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "barley",
+    "input": [
+      {
+        "resource": "bagOfBarleySeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "barley",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "potatoes",
+    "input": [
+      {
+        "resource": "bagOfPotatoes",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "potato",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "hop",
+    "input": [
+      {
+        "resource": "bagOfHopSeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "hop",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "strawberries",
+    "input": [
+      {
+        "resource": "bagOfStrawberrySeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "strawberry",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "raspberries",
+    "input": [
+      {
+        "resource": "bagOfRaspberrySeeds",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "raspberry",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "corn",
+    "input": [
+      {
+        "resource": "bagOfCorn",
+        "quantity": 1
+      }
+    ],
+    "output": [
+      {
+        "resource": "corn",
+        "quantity": 1
+      }
+    ],
+    "category": "seeds"
+  },
+  {
+    "name": "barrels",
+    "input": [
+      {
+        "resource": "iron",
+        "quantity": 4
+      },
+      {
+        "resource": "wood",
+        "quantity": 4
+      }
+    ],
+    "output": [
+      {
+        "resource": "barrel",
+        "quantity": 1
+      }
+    ],
+    "category": "workbench"
+  }
+]

@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Mashing tun",
+    "input": [
+      {
+        "resource": "water",
+        "quantity": 10
+      },
+      {
+        "resource": "starch",
+        "quantity": 5
+      }
+    ],
+    "output": [
+      {
+        "resource": "sugarWater",
+        "quantity": 5
+      }
+    ],
+    "progress": 0,
+    "gainable": false
+  },
+  {
+    "name": "Kettle",
+    "input": [
+      {
+        "resource": "sugarWater",
+        "quantity": 10
+      },
+      {
+        "resource": "hop",
+        "quantity": 5
+      }
+    ],
+    "output": [
+      {
+        "resource": "pulp",
+        "quantity": 5
+      }
+    ],
+    "progress": 0,
+    "gainable": false
+  },
+  {
+    "name": "Filter bucket",
+    "input": [
+      {
+        "resource": "pulp",
+        "quantity": 5
+      }
+    ],
+    "output": [
+      {
+        "resource": "wort",
+        "quantity": 5
+      }
+    ],
+    "progress": 0,
+    "gainable": false
+  },
+  {
+    "name": "Fermantation tank",
+    "input": [
+      {
+        "resource": "wort",
+        "quantity": 5
+      }
+    ],
+    "output": [],
+    "progress": 0,
+    "gainable": false
+  }
+]

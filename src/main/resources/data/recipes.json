@@ -1,0 +1,205 @@
+[
+  {
+    "name": "Ale",
+    "resource": "ale",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2
+    }
+  },
+  {
+    "name": "Maxxi",
+    "resource": "maxxi",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "bearMeatExtract": 2
+    }
+  },
+  {
+    "name": "Natural delight",
+    "resource": "naturalDelight",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "hibiscus": 5
+    }
+  },
+  {
+    "name": "Shiva",
+    "resource": "shiva",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "lilou": 5
+    }
+  },
+  {
+    "name": "Hikari",
+    "resource": "hikari",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "strawberry": 5
+    }
+  },
+  {
+    "name": "Mandaloen",
+    "resource": "mandaloen",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "carrot": 5
+    }
+  },
+  {
+    "name": "Analicious",
+    "resource": "analicious",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "raspberry": 5
+    }
+  },
+  {
+    "name": "Bestone",
+    "resource": "bestone",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "mango": 5
+    }
+  },
+  {
+    "name": "Magicale",
+    "resource": "magicale",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "rainbowExtract": 2
+    }
+  },
+  {
+    "name": "Snorson 's ale",
+    "resource": "snorsonsAle",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "ginger": 5
+    }
+  },
+  {
+    "name": "Butt",
+    "resource": "butt",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "strawberry": 5
+    }
+  },
+  {
+    "name": "Parsendune",
+    "resource": "parsendune",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "saltyDuneExtract": 2
+    }
+  },
+  {
+    "name": "Hua zai",
+    "resource": "huaZai",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "rose": 5
+    }
+  },
+  {
+    "name": "Power",
+    "resource": "power",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "pepper": 5
+    }
+  },
+  {
+    "name": "Ari",
+    "resource": "ari",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "iceCream": 5
+    }
+  },
+  {
+    "name": "Xylem",
+    "resource": "xylem",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "resin": 3
+    }
+  },
+  {
+    "name": "Evato",
+    "resource": "evato",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "rosemary": 4
+    }
+  }
+]

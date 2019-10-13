@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Well",
+    "resourceChances": [
+      {
+        "resource": "water",
+        "chance": 30
+      },
+      {
+        "resource": "frog",
+        "chance": 10
+      },
+      {
+        "resource": "dirt",
+        "chance": 25
+      },
+      {
+        "resource": "stone",
+        "chance": 10
+      }
+    ],
+    "collectAmount": 10,
+    "progress": 0,
+    "collectable": false
+  },
+  {
+    "name": "Apairy",
+    "resourceChances": [
+      {
+        "resource": "honey",
+        "chance": 25
+      },
+      {
+        "resource": "bee",
+        "chance": 25
+      }
+    ],
+    "collectAmount": 10,
+    "progress": 0,
+    "collectable": false
+  },
+  {
+    "name": "Forest",
+    "resourceChances": [
+      {
+        "resource": "wood",
+        "chance": 10
+      },
+      {
+        "resource": "bear meat",
+        "chance": 5
+      },
+      {
+        "resource": "resin",
+        "chance": 10
+      },
+      {
+        "resource": "daisy",
+        "chance": 25
+      },
+      {
+        "resource": "rose",
+        "chance": 25
+      },
+      {
+        "resource": "chestnut",
+        "chance": 50
+      },
+      {
+        "resource": "wood sorrel",
+        "chance": 25
+      },
+      {
+        "resource": "mushroom",
+        "chance": 40
+      },
+      {
+        "resource": "chicory",
+        "chance": 25
+      }
+    ],
+    "collectAmount": 10,
+    "progress": 0,
+    "collectable": false
+  },
+  {
+    "name": "Sea",
+    "resourceChances": [
+      {
+        "resource": "sea snail",
+        "chance": 30
+      },
+      {
+        "resource": "seawater",
+        "chance": 10
+      },
+      {
+        "resource": "shell",
+        "chance": 60
+      }
+    ],
+    "collectAmount": 10,
+    "progress": 0,
+    "collectable": false
+  },
+  {
+    "name": "Mine",
+    "resourceChances": [
+      {
+        "resource": "stone",
+        "chance": 40
+      },
+      {
+        "resource": "iron",
+        "chance": 20
+      },
+      {
+        "resource": "silver",
+        "chance": 15
+      },
+      {
+        "resource": "gold",
+        "chance": 10
+      },
+      {
+        "resource": "diamond",
+        "chance": 1
+      },
+      {
+        "resource": "clay",
+        "chance": 40
+      },
+      {
+        "resource": "dirt",
+        "chance": 60
+      }
+    ],
+    "collectAmount": 10,
+    "progress": 0,
+    "collectable": false
+  }
+]

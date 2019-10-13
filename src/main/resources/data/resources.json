@@ -1,0 +1,470 @@
+[
+  {
+    "name": "Bag of barley seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of cranberry seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of carrots",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of corn seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of wheat seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of raspberry seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of strawberry seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of hop seeds",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Bag of potatoes",
+    "category": "seeds",
+    "value": 50,
+    "growable": true
+  },
+  {
+    "name": "Raspberry",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Potato",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Barley",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Water",
+    "category": "fluids",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Dirt",
+    "category": "other",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Frog",
+    "category": "critters",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Stone",
+    "category": "stones",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Wort",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Honey",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Bee",
+    "category": "critters",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Banana",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Daisy",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Rose",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Chestnut",
+    "category": "nuts",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Cranberry",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Strawberry",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Wood",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Wood sorrel",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Mushroom",
+    "category": "fungi",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Chicory",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Iron",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Silver",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Gold",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Diamond",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Clay",
+    "category": "materials",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Seawater",
+    "category": "fluids",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Sea snail",
+    "category": "critters",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Shell",
+    "category": "other",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Dune grass",
+    "category": "plants",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Carrot",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Lilou",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Salty dune extract",
+    "category": "extracts",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Pepper",
+    "category": "spices",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Ginger",
+    "category": "spices",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Ice cream",
+    "category": "food",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Rainbow extract",
+    "category": "extracts",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Mango",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Rice",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Wheat",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Flour",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Corn",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Hop",
+    "category": "crops",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Hibiscus",
+    "category": "flowers",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Malt",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Starch",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Sugar water",
+    "category": "fluids",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Pulp",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Bear meat extract",
+    "category": "extracts",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Bear meat",
+    "category": "meat",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Resin",
+    "category": "products",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Rosemary",
+    "category": "spices",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Ale",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Shiva",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Hikari",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Mandaloen",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Analicious",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Bestone",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Magicale",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Snorson 's ale",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Butt",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Parsendune",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Hua Zai",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Power",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Natural delight",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Maxxi",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Ari",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Xylem",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Evato",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "name": "Barrel",
+    "category": "other",
+    "value": 10,
+    "growable": false
+  }
+]

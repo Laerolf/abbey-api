@@ -1,0 +1,46 @@
+[
+  {
+    "time": 4,
+    "chore": "Wake-up"
+  },
+  {
+    "time": 5,
+    "chore": "Breakfast"
+  },
+  {
+    "time": 7,
+    "chore": "Pray"
+  },
+  {
+    "time": 7.35,
+    "chore": "Work"
+  },
+  {
+    "time": 11,
+    "chore": "Pray"
+  },
+  {
+    "time": 12,
+    "chore": "Lunch"
+  },
+  {
+    "time": 13.45,
+    "chore": "Pray"
+  },
+  {
+    "time": 14,
+    "chore": "Work"
+  },
+  {
+    "time":18,
+    "chore": "Dinner"
+  },
+  {
+    "time":18.3,
+    "chore": "Pray"
+  },
+  {
+    "time":20,
+    "chore": "Sleep"
+  }
+]

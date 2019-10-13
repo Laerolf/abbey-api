@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Maurits",
+        "interests": [
+            "crops",
+            "beer"
+        ],
+        "itemsForSale": [
+            {
+                "name": "bag of wheat seeds",
+                "resource": "bagOfWheatSeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of carrots",
+                "resource": "bagOfCarrots",
+                "value": 50
+            },
+            {
+                "name": "bag of cranberry seeds",
+                "resource": "bagOfCranberrySeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of barley seeds",
+                "resource": "bagOfBarleySeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of potatoes",
+                "resource": "bagOfPotatoes",
+                "value": 50
+            },
+            {
+                "name": "bag of hop seeds",
+                "resource": "bagOfHopSeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of strawberry seeds",
+                "resource": "bagOfStrawberrySeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of raspberry seeds",
+                "resource": "bagOfRaspberrySeeds",
+                "value": 50
+            },
+            {
+                "name": "bag of corn",
+                "resource": "bagOfCorn",
+                "value": 50
+            }
+        ],
+        "interestFactor": 0.10,
+        "reputationGiven": 1
+    }
+]
