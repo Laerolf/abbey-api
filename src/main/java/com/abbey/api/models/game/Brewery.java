@@ -1,8 +1,15 @@
 package com.abbey.api.models.game;
 
 import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.HashMap;
+import java.util.Map;
+
+@Document(collection = "breweries")
+@Data
 public class Brewery {
 
     @Id
@@ -11,11 +18,14 @@ public class Brewery {
     private String recipe;
     private String beer;
 
+    private Map<String, BreweryProcessor> breweryProcessors;
+
     @Builder
-    public Brewery(String _id, String recipe, String beer){
+    public Brewery(String _id, String recipe, String beer, Map<String, BreweryProcessor> breweryProcessors){
         this._id = _id;
         this.recipe = recipe;
         this.beer = beer;
+        this.breweryProcessors = breweryProcessors;
     }
 
     public String get_id() {
@@ -37,5 +47,12 @@ public class Brewery {
     }
     public void setBeer(String beer) {
         this.beer = beer;
+    }
+
+    public Map<String, BreweryProcessor> getBreweryProcessors() {
+        return this.breweryProcessors;
+    }
+    public void setBreweryProcessors(Map<String, BreweryProcessor> breweryProcessors) {
+        this.breweryProcessors = breweryProcessors;
     }
 }

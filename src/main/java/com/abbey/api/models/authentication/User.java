@@ -2,9 +2,11 @@ package com.abbey.api.models.authentication;
 
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.util.*;
 
+@Document(collection = "users")
 @Builder
 public class User {
 
@@ -19,6 +21,9 @@ public class User {
     private String gameId;
     private String playerId;
 
+    private boolean enabled;
+    private Set<Role> roles;
+
     public String get_id() {
         return this._id;
     }
@@ -29,8 +34,8 @@ public class User {
     public String getUsername() {
         return this.username;
     }
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String username){
+        this.username= username;
     }
 
     public String getPassword() {
@@ -66,5 +71,19 @@ public class User {
     }
     public void setPlayerId(String playerId) {
         this.playerId = playerId;
+    }
+
+    public boolean isEnabled() {
+        return this.enabled;
+    }
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public Set<Role> getRoles(){
+        return this.roles;
+    }
+    public void setRoles (Set<Role> roles){
+        this.roles = roles;
     }
 }

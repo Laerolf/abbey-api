@@ -201,5 +201,17 @@
       "yeast": 2,
       "rosemary": 4
     }
+  },
+  {
+    "name": "Bobo",
+    "resource": "bobo",
+    "ingredients": {
+      "water": 10,
+      "malt": 5,
+      "maize": 2,
+      "hop": 3,
+      "yeast": 2,
+      "blueberry": 10
+    }
   }
 ]

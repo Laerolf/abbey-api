@@ -7,48 +7,39 @@
         ],
         "itemsForSale": [
             {
-                "name": "bag of wheat seeds",
-                "resource": "bagOfWheatSeeds",
+                "name": "Bag of wheat seeds",
                 "value": 50
             },
             {
-                "name": "bag of carrots",
-                "resource": "bagOfCarrots",
+                "name": "Bag of carrots",
                 "value": 50
             },
             {
-                "name": "bag of cranberry seeds",
-                "resource": "bagOfCranberrySeeds",
+                "name": "Bag of cranberry seeds",
                 "value": 50
             },
             {
-                "name": "bag of barley seeds",
-                "resource": "bagOfBarleySeeds",
+                "name": "Bag of barley seeds",
                 "value": 50
             },
             {
-                "name": "bag of potatoes",
-                "resource": "bagOfPotatoes",
+                "name": "Bag of potatoes",
                 "value": 50
             },
             {
-                "name": "bag of hop seeds",
-                "resource": "bagOfHopSeeds",
+                "name": "Bag of hop seeds",
                 "value": 50
             },
             {
-                "name": "bag of strawberry seeds",
-                "resource": "bagOfStrawberrySeeds",
+                "name": "Bag of strawberry seeds",
                 "value": 50
             },
             {
-                "name": "bag of raspberry seeds",
-                "resource": "bagOfRaspberrySeeds",
+                "name": "Bag of raspberry seeds",
                 "value": 50
             },
             {
-                "name": "bag of corn",
-                "resource": "bagOfCorn",
+                "name": "Bag of corn",
                 "value": 50
             }
         ],

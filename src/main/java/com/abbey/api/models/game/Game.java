@@ -2,12 +2,14 @@ package com.abbey.api.models.game;
 
 import lombok.Builder;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Document(collection = "games")
 @Builder
 public class Game {
 
@@ -19,6 +21,9 @@ public class Game {
 
     @Builder.Default
     private List<Field> fields = new ArrayList<>();
+
+    @Builder.Default
+    private List<Facility> facilities = new ArrayList<>();
 
     @Builder.Default
     private Map<String, ResourceQuantity> stock = new HashMap<>();
@@ -52,6 +57,13 @@ public class Game {
     }
     public void setFields(List<Field> fields) {
         this.fields = fields;
+    }
+
+    public List<Facility> getFacilities() {
+        return this.facilities;
+    }
+    public void setFacilities(List<Facility> facilities) {
+        this.facilities = facilities;
     }
 
     public Map<String, ResourceQuantity> getStock() {

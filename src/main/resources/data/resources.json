@@ -1,467 +1,559 @@
 [
   {
+    "mapName": "bagOfBarleySeeds",
     "name": "Bag of barley seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfCranberrySeeds",
     "name": "Bag of cranberry seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfCarrots",
     "name": "Bag of carrots",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
-    "name": "Bag of corn seeds",
+    "mapName": "bagOfCorn",
+    "name": "Bag of corn",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfWheatSeeds",
     "name": "Bag of wheat seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfRaspberrySeeds",
     "name": "Bag of raspberry seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfStrawberrySeeds",
     "name": "Bag of strawberry seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfHopSeeds",
     "name": "Bag of hop seeds",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "bagOfPotatoes",
     "name": "Bag of potatoes",
     "category": "seeds",
     "value": 50,
     "growable": true
   },
   {
+    "mapName": "raspberry",
     "name": "Raspberry",
     "category": "fruits",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "blueberry",
+    "name": "Blueberry",
+    "category": "fruits",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "mapName": "potato",
     "name": "Potato",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "barley",
     "name": "Barley",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "water",
     "name": "Water",
     "category": "fluids",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "dirt",
     "name": "Dirt",
     "category": "other",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "frog",
     "name": "Frog",
     "category": "critters",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "stone",
     "name": "Stone",
     "category": "stones",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "wort",
     "name": "Wort",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "honey",
     "name": "Honey",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "bee",
     "name": "Bee",
     "category": "critters",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "banana",
     "name": "Banana",
     "category": "fruits",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "daisy",
     "name": "Daisy",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "rose",
     "name": "Rose",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "chestnut",
     "name": "Chestnut",
     "category": "nuts",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "cranberry",
     "name": "Cranberry",
     "category": "fruits",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "strawberry",
     "name": "Strawberry",
     "category": "fruits",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "wood",
     "name": "Wood",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "woodSorrel",
     "name": "Wood sorrel",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "mushroom",
     "name": "Mushroom",
     "category": "fungi",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "chicory",
     "name": "Chicory",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "iron",
     "name": "Iron",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "silver",
     "name": "Silver",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "gold",
     "name": "Gold",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "diamond",
     "name": "Diamond",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "clay",
     "name": "Clay",
     "category": "materials",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "seawater",
     "name": "Seawater",
     "category": "fluids",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "seaSnail",
     "name": "Sea snail",
     "category": "critters",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "shell",
     "name": "Shell",
     "category": "other",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "duneGrass",
     "name": "Dune grass",
     "category": "plants",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "carrot",
     "name": "Carrot",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "lilou",
     "name": "Lilou",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "saltyDuneExtract",
     "name": "Salty dune extract",
     "category": "extracts",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "pepper",
     "name": "Pepper",
     "category": "spices",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "ginger",
     "name": "Ginger",
     "category": "spices",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "iceCream",
     "name": "Ice cream",
     "category": "food",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "rainboxExtract",
     "name": "Rainbow extract",
     "category": "extracts",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "mango",
     "name": "Mango",
     "category": "fruits",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "rice",
     "name": "Rice",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "wheat",
     "name": "Wheat",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "flour",
     "name": "Flour",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "corn",
     "name": "Corn",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "hop",
     "name": "Hop",
     "category": "crops",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "hibiscus",
     "name": "Hibiscus",
     "category": "flowers",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "malt",
     "name": "Malt",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "starch",
     "name": "Starch",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "sugarWater",
     "name": "Sugar water",
     "category": "fluids",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "pulp",
     "name": "Pulp",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "bearMeatExtract",
     "name": "Bear meat extract",
     "category": "extracts",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "bearMeat",
     "name": "Bear meat",
     "category": "meat",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "resin",
     "name": "Resin",
     "category": "products",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "rosemary",
     "name": "Rosemary",
     "category": "spices",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "ale",
     "name": "Ale",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "shiva",
     "name": "Shiva",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "hikari",
     "name": "Hikari",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "mandaloen",
     "name": "Mandaloen",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "analicious",
     "name": "Analicious",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "bestone",
     "name": "Bestone",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "magicale",
     "name": "Magicale",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "snorsonsAle",
     "name": "Snorson 's ale",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "butt",
     "name": "Butt",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "parsendune",
     "name": "Parsendune",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "huaZai",
     "name": "Hua Zai",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "power",
     "name": "Power",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "naturalDelight",
     "name": "Natural delight",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "maxxi",
     "name": "Maxxi",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "ari",
     "name": "Ari",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "xylem",
     "name": "Xylem",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "evato",
     "name": "Evato",
     "category": "beer",
     "value": 10,
     "growable": false
   },
   {
+    "mapName": "bobo",
+    "name": "Bobo",
+    "category": "beer",
+    "value": 10,
+    "growable": false
+  },
+  {
+    "mapName": "barrel",
     "name": "Barrel",
     "category": "other",
     "value": 10,

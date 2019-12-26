@@ -5,12 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "resources")
 @Data
 public class Resource {
 
     @Id
     private String _id;
+
+    private String mapName;
 
     private String name;
     private Boolean growable;
@@ -55,5 +59,12 @@ public class Resource {
     }
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    public String getMapName() {
+        return this.mapName;
+    }
+    public void setMapName(String mapName) {
+        this.mapName = mapName;
     }
 }

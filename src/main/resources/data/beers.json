@@ -1,5 +1,6 @@
 [
   {
+    "mapName": "ale",
     "name": "Ale",
     "category": "Pale lager",
     "alcoholLevel": 0.052,
@@ -12,6 +13,7 @@
     }
   },
   {
+    "mapName": "shiva",
     "name": "Shiva",
     "category": "Pale lager",
     "alcoholLevel": 0.036,
@@ -24,6 +26,7 @@
     }
   },
   {
+    "mapName": "hikari",
     "name": "Hikari",
     "category": "Pale lager",
     "alcoholLevel": 0.047,
@@ -36,6 +39,7 @@
     }
   },
   {
+    "mapName": "mandaloen",
     "name": "Mandaloen",
     "category": "Pale lager",
     "alcoholLevel": 0.05,
@@ -48,6 +52,7 @@
     }
   },
   {
+    "mapName": "analicious",
     "name": "Analicious",
     "category": "Pale lager",
     "alcoholLevel": 0.043,
@@ -60,6 +65,7 @@
     }
   },
   {
+    "mapName": "bestone",
     "name": "Bestone",
     "category": "Pale lager",
     "alcoholLevel": 0.037,
@@ -72,10 +78,11 @@
     }
   },
   {
+    "mapName": "magicale",
     "name": "Magicale",
     "category": "Pale lager",
     "alcoholLevel": 0.1,
-    "description": "Magicale. A rare beer with rainbow extract, its said that the taste is so sweet and great that even the old and the new gods crave it.",
+    "description": "Magicale. A rare beer with rainbow extract, its samapName that the taste is so sweet and great that even the old and the new gods crave it.",
     "discoverer": "Brysen",
     "discoverDate": {
       "day": 31,
@@ -84,7 +91,8 @@
     }
   },
   {
-    "name": "Snorson 's ale",
+    "mapName": "snorsonsAle",
+    "name": "Snorson's ale",
     "category": "Pale lager",
     "alcoholLevel": 0.061,
     "description": "This beer goes back to the roots of brewing, it's so strong you even grow a moustache after just one zip.",
@@ -96,6 +104,7 @@
     }
   },
   {
+    "mapName": "butt",
     "name": "Butt",
     "category": "Pale lager",
     "alcoholLevel": 0.048,
@@ -108,10 +117,11 @@
     }
   },
   {
+    "mapName": "parsendune",
     "name": "Parsendune",
     "category": "Pale lager",
     "alcoholLevel": 0.08,
-    "description": "PARSENDUNE, when the grasp of a coarse hand plucks the sturdy grasshalms that sting and skimp the silky skin of the thighs, the parson curses and drags his habit around in total agony until his mind illuminates. What if he ordered the monks of the abbey to clear a pathway for him through the obstructive dune jungle. And so it came to be that every month a small procession of monks came all the way from Brugensis to secure a pathway to the parson's small chapel at the shoreline.Eventually when the monks returned with bloodsmeared hands and painful feet, brother Cuthbert considered their tremendous effort and sighed.Months had gone by and not one monk in the abbey still volunteered for this most exhausting task at the stormy shore of the Flanders county.Moodily Cuthbert lays his head to rest, soon to fall into the dizzying vertigo of his dreams.Shuddering he awakes to a vision.A vision of monks slaving away in a salted steam bubbling in copper cauldrons the size of a bursting bull.Uneasily he removes the remaining dunesand from his weary eyesockets and with a sudden twist of his tongue realises that mysterious cauldron is his very mouth with salty steam pouring out of his nostrils.The smell of pickled herring, the fresh dunegrass and the struggle to scrape together the money for the restauration of the old chapel, it must be hidden clues to the divine will! The beerbrewery which has been abonded decades ago now standing as a beacon of hope amidst the arrogant aristocrats preying upon the abbey, seeking to acquire it from the few grubby monks that remain in its enclosure.Foolish sinners they are, swearing and cursing that they shall turn it into a palace of vice for their lustful mistresses.However, Cuthbert sees his fate crumbling into a pathway foaming with golden threads spun of drunken memories and as the brother shivers with excitement he pledges to himself to make the abbey great again.Parsendune shall be the name that will be sung along with our Lord's fame, in every tipsy tavern across the county, passing the Word from sip to lip. Skol!",
+    "description": "PARSENDUNE, when the grasp of a coarse hand plucks the sturdy grasshalms that sting and skimp the silky skin of the thighs, the parson curses and drags his habit around in total agony until his mind illuminates. What if he ordered the monks of the abbey to clear a pathway for him through the obstructive dune jungle. And so it came to be that every month a small procession of monks came all the way from Brugensis to secure a pathway to the parson's small chapel at the shoreline.Eventually when the monks returned with bloodsmeared hands and painful feet, brother Cuthbert consmapNameered their tremendous effort and sighed.Months had gone by and not one monk in the abbey still volunteered for this most exhausting task at the stormy shore of the Flanders county.Moodily Cuthbert lays his head to rest, soon to fall into the dizzying vertigo of his dreams.Shuddering he awakes to a vision.A vision of monks slaving away in a salted steam bubbling in copper cauldrons the size of a bursting bull.Uneasily he removes the remaining dunesand from his weary eyesockets and with a sudden twist of his tongue realises that mysterious cauldron is his very mouth with salty steam pouring out of his nostrils.The smell of pickled herring, the fresh dunegrass and the struggle to scrape together the money for the restauration of the old chapel, it must be hmapNameden clues to the divine will! The beerbrewery which has been abonded decades ago now standing as a beacon of hope ammapNamest the arrogant aristocrats preying upon the abbey, seeking to acquire it from the few grubby monks that remain in its enclosure.Foolish sinners they are, swearing and cursing that they shall turn it into a palace of vice for their lustful mistresses.However, Cuthbert sees his fate crumbling into a pathway foaming with golden threads spun of drunken memories and as the brother shivers with excitement he pledges to himself to make the abbey great again.Parsendune shall be the name that will be sung along with our Lord's fame, in every tipsy tavern across the county, passing the Word from sip to lip. Skol!",
     "discoverer": "Skriabin",
     "discoverDate": {
       "day": 1,
@@ -120,6 +130,7 @@
     }
   },
   {
+    "mapName": "huaZai",
     "name": "Hua Zai",
     "category": "Pale lager",
     "alcoholLevel": 0.059,
@@ -132,6 +143,7 @@
     }
   },
   {
+    "mapName": "power",
     "name": "Power",
     "category": "Pale lager",
     "alcoholLevel": 0.07,
@@ -144,6 +156,7 @@
     }
   },
   {
+    "mapName": "naturalDelight",
     "name": "Natural delight",
     "category": "Pale lager",
     "alcoholLevel": 0.04,
@@ -156,6 +169,7 @@
     }
   },
   {
+    "mapName": "maxxi",
     "name": "Maxxi",
     "category": "Pale lager",
     "alcoholLevel": 0.07,
@@ -168,6 +182,7 @@
     }
   },
   {
+    "mapName": "ari",
     "name": "Ari",
     "category": "Pale lager",
     "alcoholLevel": 0.082,
@@ -180,10 +195,11 @@
     }
   },
   {
+    "mapName": "xylem",
     "name": "Xylem",
     "category": "Pale lager",
     "alcoholLevel": 0.078,
-    "description": "Xylem. When the abbey was taken over by the Nights of the Early Age, the monks were forced to hide in the forest. Here, they accidently mixed their beer recipe with resin from the trees. This was caused by trees leaking their fluids in to the beer-reservoires from the monks. The monks discovered that the resin from the trees gave a unique flavour to their beer. When the Early Age war was over, they went back to the abbey where they started production of their beer with their special recipe. After a while, they also discovered that the beer has a special influence on the warriors that drank the beer . The men who drank it, would become as strong as a tree.",
+    "description": "Xylem. When the abbey was taken over by the Nights of the Early Age, the monks were forced to hmapNamee in the forest. Here, they accmapNameently mixed their beer recipe with resin from the trees. This was caused by trees leaking their flumapNames in to the beer-reservoires from the monks. The monks discovered that the resin from the trees gave a unique flavour to their beer. When the Early Age war was over, they went back to the abbey where they started production of their beer with their special recipe. After a while, they also discovered that the beer has a special influence on the warriors that drank the beer . The men who drank it, would become as strong as a tree.",
     "discoverer": "Jasper Schepers",
     "discoverDate": {
       "day": 5,
@@ -192,6 +208,7 @@
     }
   },
   {
+    "mapName": "evato",
     "name": "Evato",
     "category": "Pale lager",
     "alcoholLevel": 0.06,
@@ -199,6 +216,19 @@
     "discoverer": "Anthony Devuyst",
     "discoverDate": {
       "day": 5,
+      "month": 11,
+      "year": 2018
+    }
+  },
+  {
+    "mapName": "bobo",
+    "name": "Bobo",
+    "category": "Pale lager",
+    "alcoholLevel": 0.083,
+    "description": "The original recipe of this fruity beer, was actually a recipe for medicine. Cheers!",
+    "discoverer": "Qiubo",
+    "discoverDate": {
+      "day": 12,
       "month": 11,
       "year": 2018
     }

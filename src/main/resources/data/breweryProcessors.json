@@ -59,7 +59,7 @@
     "gainable": false
   },
   {
-    "name": "Fermantation tank",
+    "name": "Fermentation tank",
     "input": [
       {
         "resource": "wort",

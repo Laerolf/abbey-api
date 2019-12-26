@@ -1,74 +1,79 @@
 package com.abbey.api.controllers;
 
-import com.abbey.api.authenticator.Authenticator;
-import com.abbey.api.models.authentication.AuthenticationFeedback;
 import com.abbey.api.models.authentication.LoginData;
-import com.abbey.api.models.authentication.LoginFeedback;
-import com.abbey.api.models.authentication.User;
 import com.abbey.api.repositories.authentication.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.springframework.http.ResponseEntity.ok;
+import static org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY;
+
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping(value = "/api/login")
+@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600, allowCredentials = "true")
+@RequestMapping(value = "/login")
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
+    UserRepository users;
+
+    @Autowired
     UserRepository userRepository;
 
-    @PostMapping(value = "")
-    public @ResponseBody
-    LoginFeedback login(@RequestBody LoginData loginData){
+    @Autowired
+    AuthenticationManager authenticationManager;
 
-        logger.info("LOGIN: TRYING TO LOGIN");
+    @PostMapping("")
+    public ResponseEntity login(@RequestBody LoginData data, HttpServletRequest request) {
 
-        LoginFeedback feedback = LoginFeedback.builder().build();
+        String username = data.getUsername();
+        String password = data.getPassword();
 
-        User intendedUser = userRepository.getByUsername(loginData.getUsername());
+        this.logger.info("USER LOGIN: {}", username);
 
-        if (intendedUser != null){
+        try {
 
-            if (intendedUser.getPassword().equals(loginData.getPassword())){
-                logger.info("LOGIN: SUCCESSFUL");
+            Authentication auth = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 
-                Authenticator authenticator = Authenticator.getInstance();
+            SecurityContext context = SecurityContextHolder.getContext();
+            context.setAuthentication(auth);
 
-                Map<String, String> tokenData = new HashMap<>();
-                tokenData.put("user", intendedUser.get_id());
-                tokenData.put("game", intendedUser.getGameId());
-                tokenData.put("player", intendedUser.getPlayerId());
+            HttpSession session = request.getSession(true);
+            session.setAttribute(SPRING_SECURITY_CONTEXT_KEY, context);
 
-                AuthenticationFeedback authenticationFeedback = authenticator.createToken(tokenData);
+            Map<Object, Object> model = new HashMap<>();
+            model.put("success", true);
+            model.put("message", "Successfully logged in.");
 
-                feedback.addData("token", authenticationFeedback.getData().get("token"));
+            this.logger.info("USER LOGIN: {}: SUCCESSFUL", username);
 
-                feedback.setSuccessful(true);
-                feedback.setMessage("Successfully logged in!");
-            }
-            else {
-                logger.info("LOGIN: FAILED");
+            return ok(model);
 
-                feedback.setSuccessful(false);
-                feedback.setMessage("Wrong password.");
-            }
+        } catch (AuthenticationException exception) {
+            this.logger.error("USER LOGIN: {}: FAILED: {}", username, exception);
 
+            Map<Object, Object> model = new HashMap<>();
+            model.put("success", false);
+            model.put("message", "Something went wrong.");
+
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(model);
         }
-        else {
-            logger.info("LOGIN: FAILED");
-
-            feedback.setSuccessful(false);
-            feedback.setMessage("There is no user with username '" + loginData.getUsername() + "'.");
-        }
-
-        return feedback;
     }
 
 }

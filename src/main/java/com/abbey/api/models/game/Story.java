@@ -1,13 +1,17 @@
 package com.abbey.api.models.game;
 
 import lombok.Builder;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Document(collection = "stories")
+@Data
 @Builder
 public class Story {
 
@@ -15,13 +19,13 @@ public class Story {
     private String _id;
 
     @Builder.Default
-    private Map<String, String> chapters = new HashMap<>();
+    private Map<String, String> chapters;
 
     @Builder.Default
-    private List<String> randomFacts = new ArrayList<>();
+    private Map<String, String> randomFacts;
 
     @Builder.Default
-    private List<String> abbotNames = new ArrayList<>();
+    private Map<String, String> abbotNames;
 
     private StoryAnswers storyAnswers;
     private Boolean completeStory;
@@ -40,17 +44,17 @@ public class Story {
         this.chapters = chapters;
     }
 
-    public List<String> getRandomFacts() {
+    public Map<String, String> getRandomFacts() {
         return this.randomFacts;
     }
-    public void setRandomFacts(List<String> randomFacts) {
+    public void setRandomFacts(Map<String, String> randomFacts) {
         this.randomFacts = randomFacts;
     }
 
-    public List<String> getAbbotNames() {
+    public Map<String, String> getAbbotNames() {
         return this.abbotNames;
     }
-    public void setAbbotNames(List<String> abbotNames) {
+    public void setAbbotNames(Map<String, String> abbotNames) {
         this.abbotNames = abbotNames;
     }
 

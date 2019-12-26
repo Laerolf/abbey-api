@@ -6,20 +6,20 @@ import com.abbey.api.models.authentication.RegistrationData;
 import com.abbey.api.models.authentication.User;
 import com.abbey.api.models.game.*;
 import com.abbey.api.repositories.authentication.UserRepository;
+import com.abbey.api.repositories.game.FacilityRepository;
 import com.abbey.api.repositories.game.GameRepository;
 import com.abbey.api.repositories.game.PlayerRepository;
+import com.abbey.api.services.UserService;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://localhost:8080", maxAge = 3600, allowCredentials = "true")
 @RequestMapping(value = "/api/register")
 public class RegisterController {
 
@@ -33,24 +33,31 @@ public class RegisterController {
     private PlayerRepository playerRepository;
 
     @Autowired
+    private FacilityRepository facilityRepository;
+
+    @Autowired
     private DataLoader dataLoader;
 
-    private Logger log = LoggerFactory.getLogger(getClass());
+    @Autowired
+    private UserService userService;
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @PostMapping(value = "")
     public @ResponseBody
     Feedback register(@RequestBody RegistrationData registrationData) {
-        log.info("TRYING TO REGISTER");
+
+        this.logger.info("USER REGISTRATION: {}", registrationData.getUsername());
 
         Feedback feedback = new Feedback("Invalid confirmation of your password.", false);
 
-        if (registrationData.getPassword().equals(registrationData.getConfirmPassword())) {
+        try {
 
             User existingUser = userRepository.getByUsername(registrationData.getUsername());
 
             if (existingUser == null) {
 
-                log.info("CREATING NEW USER");
+                this.logger.info("USER REGISTRATION: {}: CREATING NEW USER", registrationData.getUsername());
 
                 // ABBEY > DEPARTMENTS
 
@@ -150,6 +157,7 @@ public class RegisterController {
                 chores.put(ObjectId.get().toHexString(), sleep);
 
                 Schedule schedule = Schedule.builder()
+                        ._id(ObjectId.get().toHexString())
                         .chores(chores)
                         .build();
 
@@ -162,10 +170,15 @@ public class RegisterController {
                         .schedule(schedule)
                         .build();
 
+                // FACILITIES
+
+                List<Facility> facilities = this.facilityRepository.findAll();
+
                 // BREWERY
 
                 Brewery brewery = Brewery.builder()
                         ._id(ObjectId.get().toHexString())
+                        .breweryProcessors(new HashMap<>())
                         .build();
 
                 // STORY
@@ -183,9 +196,12 @@ public class RegisterController {
                 Game newGame = Game.builder()
                         ._id(ObjectId.get().toHexString())
                         .abbey(abbey)
+                        .facilities(facilities)
                         .brewery(brewery)
                         .story(story)
                         .workbench(workbench)
+                        .fields(new ArrayList<>())
+                        .stock(new HashMap<>())
                         .build();
 
                 // PLAYER
@@ -210,23 +226,31 @@ public class RegisterController {
                 gameRepository.save(newGame);
                 playerRepository.save(newPlayer);
                 userRepository.save(newUser);
+                userService.saveUser(newUser);
 
                 feedback.setSuccessful(true);
                 feedback.setMessage("Successfully created a new account.");
 
-                log.info("SUCCESSFUL REGISTRATION");
+                this.logger.info("USER REGISTRATION: {}: SUCCESSFUL", registrationData.getUsername());
 
             } else {
 
-                log.error("REGISTRATION FAILED");
-
                 feedback.setMessage("Username in use.");
+
+                this.logger.error("USER REGISTRATION: {}: FAILED: {}", registrationData.getUsername(), feedback.getMessage().toUpperCase());
 
             }
 
-        }
+            return feedback;
+        } catch (Exception exception) {
 
-        return feedback;
+            feedback.setSuccessful(false);
+            feedback.setMessage("Something went wrong.");
+
+            this.logger.error("USER REGISTRATION: {}: FAILED: {}", registrationData.getUsername(), exception);
+
+            return feedback;
+        }
 
     }
 }

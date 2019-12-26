@@ -6,4 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface ResourceRepository extends MongoRepository<Resource, String> {
     Resource getBy_id(String _id);
     Resource getByName(String name);
+    Resource getByMapName(String mapName);
 }

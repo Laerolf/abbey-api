@@ -1,10 +1,11 @@
-[
-  "of a song",
-  "of a movie",
-  "of someone I used to know",
-  "of soup,of noodles",
-  "that I need to feed my cats after this story",
-  "that it's the same name as the creator of this all",
-  "of someone I have seen on TV"
-]
+{
+  "0": "story-randomFact-1",
+  "1": "story-randomFact-2",
+  "2": "story-randomFact-3",
+  "3": "story-randomFact-4",
+  "4": "story-randomFact-5",
+  "5": "story-randomFact-6",
+  "6": "story-randomFact-7",
+  "7": "story-randomFact-8"
+}
 

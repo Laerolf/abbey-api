@@ -1,7 +1,11 @@
 package com.abbey.api.initializers.loaders;
 
+import com.abbey.api.models.authentication.Role;
 import com.abbey.api.models.game.*;
+import com.abbey.api.models.translation.Translation;
+import com.abbey.api.repositories.authentication.RoleRepository;
 import com.abbey.api.repositories.game.*;
+import com.abbey.api.repositories.translation.TranslationRepository;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bson.types.ObjectId;
@@ -12,10 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class DataLoader {
@@ -33,33 +34,36 @@ public class DataLoader {
     @Autowired
     private RecipeRepository recipeRepository;
     @Autowired
-    private StoryRepository storyRepository;
-    @Autowired
     private TransmutationRepository transmutationRepository;
     @Autowired
     private VendorRepository vendorRepository;
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
+    private TranslationRepository translationRepository;
 
     private Map<String, String> dataPaths;
 
     public DataLoader() {
-        this.dataPaths = new HashMap<>();
-        this.dataPaths.put("resources", "/data/resources.json");
+        this.dataPaths = new LinkedHashMap<>();
         this.dataPaths.put("beers", "/data/beers.json");
+        this.dataPaths.put("resources","/data/resources.json");
         this.dataPaths.put("breweryProcessors", "/data/breweryProcessors.json");
-        this.dataPaths.put("facilities", "/data/facilities.json");
-        this.dataPaths.put("recipes", "/data/recipes.json");
         this.dataPaths.put("transmutations", "/data/transmutations.json");
+        this.dataPaths.put("facilities", "/data/facilities.json");
         this.dataPaths.put("vendors", "/data/vendors.json");
+        this.dataPaths.put("recipes", "/data/recipes.json");
+        this.dataPaths.put("roles", "/data/roles.json");
     }
 
     public void loadData() {
+
+        this.loadResources(this.dataPaths.get("resources"));
+
         for (Map.Entry<String, String> entry : this.dataPaths.entrySet()) {
 
             switch (entry.getKey()) {
-
-                case "resources":
-                    this.loadResources(entry.getKey(), entry.getValue());
-                    break;
 
                 case "beers":
                     this.loadBeers(entry.getKey(), entry.getValue());
@@ -73,6 +77,10 @@ public class DataLoader {
                     this.loadFacilities(entry.getKey(), entry.getValue());
                     break;
 
+                case "vendors":
+                    this.loadVendors(entry.getKey(), entry.getValue());
+                    break;
+
                 case "recipes":
                     this.loadRecipes(entry.getKey(), entry.getValue());
                     break;
@@ -80,14 +88,86 @@ public class DataLoader {
                 case "transmutations":
                     this.loadTransmutations(entry.getKey(), entry.getValue());
                     break;
-
-                case "vendors":
-                    this.loadVendors(entry.getKey(), entry.getValue());
-                    break;
             }
         }
 
-        this.loadStory();
+        this.loadRoles(this.dataPaths.get("roles"));
+        this.loadTranslation("en");
+    }
+
+    private void loadResources(String elementDataPath) {
+
+        ObjectMapper mapper = new ObjectMapper();
+        TypeReference<List<Resource>> typeReference = new TypeReference<List<Resource>>() {
+        };
+        InputStream inputStream = TypeReference.class.getResourceAsStream(elementDataPath);
+        try {
+            List<Resource> resources = mapper.readValue(inputStream, typeReference);
+
+            resources.forEach(resource -> {
+                if (this.resourceRepository.getByName(resource.getName()) == null) {
+                    this.logger.info("CREATING {}: {}", "resources".toUpperCase(), resource.getName());
+                    this.resourceRepository.save(resource);
+                }
+            });
+        } catch (IOException exception) {
+            this.logger.error("Unable to load all {}: {}", "resources", exception.getMessage());
+        }
+    }
+
+    private void loadTranslation(String language) {
+
+        if (this.translationRepository.getByLanguage(language) == null) {
+
+            String dataPathAbbotNames = "/data/translations/story/abbotNames/" + language + ".json";
+            String dataPathRandomFacts = "/data/translations/story/randomfacts/" + language + ".json";
+            String dataPathStoryChapters = "/data/translations/story/chapters/" + language + ".json";
+
+            Map<String, String> storyChapters = new HashMap<>();
+            Map<String, String> randomFacts = new HashMap<>();
+            Map<String, String> abbotNames = new HashMap<>();
+
+            ObjectMapper mapper = new ObjectMapper();
+            TypeReference<Map<String, String>> typeReferenceMap = new TypeReference<Map<String, String>>() {
+            };
+
+            InputStream inputStream = TypeReference.class.getResourceAsStream(dataPathStoryChapters);
+            try {
+                this.logger.info("LOADING ALL STORY CHAPTERS IN '{}'", language);
+                storyChapters = mapper.readValue(inputStream, typeReferenceMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "story chapters", exception.getMessage());
+            }
+
+            inputStream = TypeReference.class.getResourceAsStream(dataPathRandomFacts);
+            try {
+                this.logger.info("LOADING ALL RANDOM FACTS IN '{}'", language);
+                randomFacts = mapper.readValue(inputStream, typeReferenceMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "random facts", exception.getMessage());
+            }
+
+            inputStream = TypeReference.class.getResourceAsStream(dataPathAbbotNames);
+            try {
+                this.logger.info("LOADING ALL ABBOT NAMES IN '{}'", language);
+                abbotNames = mapper.readValue(inputStream, typeReferenceMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "abbot names", exception.getMessage());
+            }
+
+            Map<String, Map<String, String>> translationContent = new HashMap<>();
+            translationContent.put("storyChapters", storyChapters);
+            translationContent.put("randomFacts", randomFacts);
+            translationContent.put("abbotNames", abbotNames);
+
+            Translation newTranslation = Translation.builder()
+                    ._id(ObjectId.get().toHexString())
+                    .language(language)
+                    .content(translationContent)
+                    .build();
+
+            this.translationRepository.save(newTranslation);
+        }
     }
 
     public Story loadStory() {
@@ -97,13 +177,11 @@ public class DataLoader {
         String dataPathStoryChapters = "/data/storyChapters.json";
 
         Map<String, String> storyChapters = new HashMap<>();
-        List<String> randomFacts = new ArrayList<>();
-        List<String> abbotNames = new ArrayList<>();
+        Map<String, String> randomFacts = new HashMap<>();
+        Map<String, String> abbotNames = new HashMap<>();
 
         ObjectMapper mapper = new ObjectMapper();
         TypeReference<Map<String, String>> typeReferenceMap = new TypeReference<Map<String, String>>() {
-        };
-        TypeReference<List<String>> typeReferenceList = new TypeReference<List<String>>() {
         };
 
         InputStream inputStream = TypeReference.class.getResourceAsStream(dataPathStoryChapters);
@@ -115,14 +193,14 @@ public class DataLoader {
 
         inputStream = TypeReference.class.getResourceAsStream(dataPathRandomFacts);
         try {
-            randomFacts = mapper.readValue(inputStream, typeReferenceList);
+            randomFacts = mapper.readValue(inputStream, typeReferenceMap);
         } catch (IOException exception) {
             this.logger.error("Unable to load all {}: {}", "random facts", exception.getMessage());
         }
 
         inputStream = TypeReference.class.getResourceAsStream(dataPathAbbotNames);
         try {
-            abbotNames = mapper.readValue(inputStream, typeReferenceList);
+            abbotNames = mapper.readValue(inputStream, typeReferenceMap);
         } catch (IOException exception) {
             this.logger.error("Unable to load all {}: {}", "abbot names", exception.getMessage());
         }
@@ -132,26 +210,27 @@ public class DataLoader {
                 .chapters(storyChapters)
                 .abbotNames(abbotNames)
                 .randomFacts(randomFacts)
+                .storyAnswers(StoryAnswers.builder().build())
                 .build();
     }
 
-    private void loadResources(String elementName, String elementDataPath) {
+    private void loadRoles(String elementDataPath) {
 
         ObjectMapper mapper = new ObjectMapper();
-        TypeReference<List<Resource>> typeReference = new TypeReference<List<Resource>>() {
+        TypeReference<List<Role>> typeReference = new TypeReference<List<Role>>() {
         };
         InputStream inputStream = TypeReference.class.getResourceAsStream(elementDataPath);
         try {
-            List<Resource> resources = mapper.readValue(inputStream, typeReference);
+            List<Role> roles = mapper.readValue(inputStream, typeReference);
 
-            resources.forEach(resource -> {
-                if (this.resourceRepository.getByName(resource.getName()) == null) {
-                    this.logger.info("CREATING {}: {}", elementName.toUpperCase(), resource.getName());
-                    this.resourceRepository.save(resource);
+            roles.forEach(role -> {
+                if (this.roleRepository.findByRole(role.getRole()) == null) {
+                    this.logger.info("CREATING ROLES: {}", role.getRole());
+                    this.roleRepository.save(role);
                 }
             });
         } catch (IOException exception) {
-            this.logger.error("Unable to load all {}: {}", elementName, exception.getMessage());
+            this.logger.error("Unable to load all roles: {}", exception.getMessage());
         }
     }
 
@@ -187,6 +266,17 @@ public class DataLoader {
             breweryProcessors.forEach(breweryProcessor -> {
                 if (this.breweryProcessorRepository.getByName(breweryProcessor.getName()) == null) {
                     this.logger.info("CREATING {}: {}", elementName.toUpperCase(), breweryProcessor.getName());
+
+                    for(ResourceQuantity resourceQuantity : breweryProcessor.getInput()) {
+                        Resource resource = this.resourceRepository.getByMapName(resourceQuantity.getResource());
+                        resourceQuantity.setResource(resource.get_id());
+                    }
+
+                    for(ResourceQuantity resourceQuantity : breweryProcessor.getOutput()) {
+                        Resource resource = this.resourceRepository.getByMapName(resourceQuantity.getResource());
+                        resourceQuantity.setResource(resource.get_id());
+                    }
+
                     this.breweryProcessorRepository.save(breweryProcessor);
                 }
             });
@@ -207,6 +297,15 @@ public class DataLoader {
             facilities.forEach(facility -> {
                 if (this.facilityRepository.getByName(facility.getName()) == null) {
                     this.logger.info("CREATING {}: {}", elementName.toUpperCase(), facility.getName());
+
+                    facility.getResourceChances().forEach(resourceChance -> {
+                        resourceChance.setResource(this.resourceRepository.getByMapName(resourceChance.getResource()).get_id());
+                    });
+
+                    facility.setLastTimeVisited(null);
+                    facility.setProgressStep(0.01);
+                    facility.setTotalProcessTime(1000 * 60);
+
                     this.facilityRepository.save(facility);
                 }
             });
@@ -227,6 +326,10 @@ public class DataLoader {
             recipes.forEach(recipe -> {
                 if (this.recipeRepository.getByName(recipe.getName()) == null) {
                     this.logger.info("CREATING {}: {}", elementName.toUpperCase(), recipe.getName());
+
+                    Beer beer = this.beerRepository.getByMapName(recipe.getResource());
+                    recipe.setResource(beer.get_id());
+
                     this.recipeRepository.save(recipe);
                 }
             });
@@ -247,6 +350,15 @@ public class DataLoader {
             transmutations.forEach(transmutation -> {
                 if (this.transmutationRepository.getByName(transmutation.getName()) == null) {
                     this.logger.info("CREATING {}: {}", elementName.toUpperCase(), transmutation.getName());
+
+                    transmutation.getInput().forEach(item -> {
+                        item.setResource(this.resourceRepository.getByMapName(item.getResource()).get_id());
+                    });
+
+                    transmutation.getOutput().forEach(item -> {
+                        item.setResource(this.resourceRepository.getByMapName(item.getResource()).get_id());
+                    });
+
                     this.transmutationRepository.save(transmutation);
                 }
             });
@@ -267,6 +379,14 @@ public class DataLoader {
             vendors.forEach(vendor -> {
                 if (this.vendorRepository.getByName(vendor.getName()) == null) {
                     this.logger.info("CREATING {}: {}", elementName.toUpperCase(), vendor.getName());
+
+                    for (ItemForSale itemForSale : vendor.getItemsForSale()){
+
+                        this.logger.info("CREATING {}: {}: Adding {}", elementName.toUpperCase(), vendor.getName(), itemForSale.getName());
+
+                        itemForSale.setResource(this.resourceRepository.getByName(itemForSale.getName()).get_id());
+                    }
+
                     this.vendorRepository.save(vendor);
                 }
             });
