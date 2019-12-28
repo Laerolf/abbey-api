@@ -119,46 +119,145 @@ public class DataLoader {
 
         if (this.translationRepository.getByLanguage(language) == null) {
 
-            String dataPathAbbotNames = "/data/translations/story/abbotNames/" + language + ".json";
-            String dataPathRandomFacts = "/data/translations/story/randomfacts/" + language + ".json";
-            String dataPathStoryChapters = "/data/translations/story/chapters/" + language + ".json";
+            // STORY
+            String pathAbbotNamesTranslations = "/data/translations/game/story/abbotNames/" + language + ".json";
+            String pathRandomFactsTranslations = "/data/translations/game/story/randomfacts/" + language + ".json";
+            String pathStoryChaptersTranslations = "/data/translations/game/story/chapters/" + language + ".json";
 
-            Map<String, String> storyChapters = new HashMap<>();
-            Map<String, String> randomFacts = new HashMap<>();
-            Map<String, String> abbotNames = new HashMap<>();
+            // GAME
+            String pathGameTranslations = "/data/translations/game/";
+            String[] gameParts = {"abbey", "brewery", "jobs", "marketplace", "navigation", "player", "stock", "storybook", "workshop"};
 
+            // GENERAL
+            String pathGeneralTranslations = "/data/translations/game/general/" + language + ".json";
+
+            // NAVIGATION
+            String pathNavigationTranslations = "/data/translations/game/navigation/" + language + ".json";
+
+            // LOGIN
+            String pathLoginTranslations = "/data/translations/login/" + language + ".json";
+
+            // REGISTER
+            String pathRegisterTranslations = "/data/translations/register/" + language + ".json";
+
+            // GAME
+            Map<String, Object> gameTranslationContent = new HashMap<>();
+
+            // MAPPERS
             ObjectMapper mapper = new ObjectMapper();
-            TypeReference<Map<String, String>> typeReferenceMap = new TypeReference<Map<String, String>>() {
+            TypeReference<Map<String, String>> StringStringMap = new TypeReference<Map<String, String>>() {
+            };
+            TypeReference<Map<String, Object>> StringObjectMap = new TypeReference<Map<String, Object>>() {
             };
 
-            InputStream inputStream = TypeReference.class.getResourceAsStream(dataPathStoryChapters);
+            // STORY
+            Map<String, String> storyChaptersTranslations = new HashMap<>();
+            Map<String, String> randomFactsTranslations = new HashMap<>();
+            Map<String, String> abbotNamesTranslations = new HashMap<>();
+
+            InputStream inputStream = TypeReference.class.getResourceAsStream(pathStoryChaptersTranslations);
             try {
                 this.logger.info("LOADING ALL STORY CHAPTERS IN '{}'", language);
-                storyChapters = mapper.readValue(inputStream, typeReferenceMap);
+                storyChaptersTranslations = mapper.readValue(inputStream, StringStringMap);
             } catch (IOException exception) {
                 this.logger.error("Unable to load all translations of {}: {}", "story chapters", exception.getMessage());
             }
 
-            inputStream = TypeReference.class.getResourceAsStream(dataPathRandomFacts);
+            inputStream = TypeReference.class.getResourceAsStream(pathRandomFactsTranslations);
             try {
                 this.logger.info("LOADING ALL RANDOM FACTS IN '{}'", language);
-                randomFacts = mapper.readValue(inputStream, typeReferenceMap);
+                randomFactsTranslations = mapper.readValue(inputStream, StringStringMap);
             } catch (IOException exception) {
                 this.logger.error("Unable to load all translations of {}: {}", "random facts", exception.getMessage());
             }
 
-            inputStream = TypeReference.class.getResourceAsStream(dataPathAbbotNames);
+            inputStream = TypeReference.class.getResourceAsStream(pathAbbotNamesTranslations);
             try {
                 this.logger.info("LOADING ALL ABBOT NAMES IN '{}'", language);
-                abbotNames = mapper.readValue(inputStream, typeReferenceMap);
+                abbotNamesTranslations = mapper.readValue(inputStream, StringStringMap);
             } catch (IOException exception) {
                 this.logger.error("Unable to load all translations of {}: {}", "abbot names", exception.getMessage());
             }
 
-            Map<String, Map<String, String>> translationContent = new HashMap<>();
-            translationContent.put("storyChapters", storyChapters);
-            translationContent.put("randomFacts", randomFacts);
-            translationContent.put("abbotNames", abbotNames);
+            Map<String, Map<String, String>> storyTranslation = new HashMap<>();
+            storyTranslation.put("storyChapters", storyChaptersTranslations);
+            storyTranslation.put("randomFacts", randomFactsTranslations);
+            storyTranslation.put("abbotNames", abbotNamesTranslations);
+
+            gameTranslationContent.put("story", storyTranslation);
+
+            // GAME
+            for ( String gamePart : gameParts){
+
+                Map<String, String> gamePartTranslations = new HashMap<>();
+                String pathGamePartTranslation = pathGameTranslations+gamePart+"/" + language + ".json";
+                inputStream = TypeReference.class.getResourceAsStream(pathGamePartTranslation);
+
+                try {
+                    this.logger.info("LOADING GAME {} WORDS IN '{}'", gamePart.toUpperCase(), language);
+                    gamePartTranslations = mapper.readValue(inputStream, StringObjectMap);
+                } catch (IOException exception) {
+                    this.logger.error("Unable to load all translations of {}: {}", gamePart, exception.getMessage());
+                }
+
+                gameTranslationContent.put(gamePart, gamePartTranslations);
+
+            }
+
+            // GENERAL
+            Map<String, Object> generalTranslations = new HashMap<>();
+            inputStream = TypeReference.class.getResourceAsStream(pathGeneralTranslations);
+
+            try {
+                this.logger.info("LOADING GAME {} WORDS IN '{}'", "GENERAL", language);
+                generalTranslations = mapper.readValue(inputStream, StringObjectMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "general", exception.getMessage());
+            }
+
+            gameTranslationContent.put("general", generalTranslations);
+
+            // NAVIGATION
+            Map<String, Object> navigationTranslations = new HashMap<>();
+            inputStream = TypeReference.class.getResourceAsStream(pathNavigationTranslations);
+
+            try {
+                this.logger.info("LOADING GAME {} WORDS IN '{}'", "NAVIGATION", language);
+                navigationTranslations = mapper.readValue(inputStream, StringObjectMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "navigation", exception.getMessage());
+            }
+
+            gameTranslationContent.put("navigation", navigationTranslations);
+
+            // LOGIN
+            Map<String, Object> loginTranslations = new HashMap<>();
+            inputStream = TypeReference.class.getResourceAsStream(pathLoginTranslations);
+
+            try {
+                this.logger.info("LOADING {} WORDS IN '{}'", "LOGIN", language);
+                loginTranslations = mapper.readValue(inputStream, StringObjectMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "login", exception.getMessage());
+            }
+
+            // REGISTER
+            Map<String, Object> registerTranslations = new HashMap<>();
+            inputStream = TypeReference.class.getResourceAsStream(pathRegisterTranslations);
+
+            try {
+                this.logger.info("LOADING {} WORDS IN '{}'", "REGISTER", language);
+                registerTranslations = mapper.readValue(inputStream, StringObjectMap);
+            } catch (IOException exception) {
+                this.logger.error("Unable to load all translations of {}: {}", "register", exception.getMessage());
+            }
+
+            // FINISHING
+
+            Map<String, Map<String, Object>> translationContent = new HashMap<>();
+            translationContent.put("game", gameTranslationContent);
+            translationContent.put("login", loginTranslations);
+            translationContent.put("register", registerTranslations);
 
             Translation newTranslation = Translation.builder()
                     ._id(ObjectId.get().toHexString())

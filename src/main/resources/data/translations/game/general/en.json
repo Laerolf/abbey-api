@@ -1,0 +1,9 @@
+{
+  "name": "Abbey",
+  "donate": "Donate",
+  "greeting": "Hello {name}",
+  "unknownUser": "stranger",
+  "actions": {
+    "logOutButton": "Log out"
+  }
+}

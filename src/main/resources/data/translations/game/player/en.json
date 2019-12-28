@@ -1,0 +1,15 @@
+{
+  "content": {
+    "title": "Here you can find all we know about you.",
+    "userInformation": {
+      "title": "User information",
+      "username": "Your username is {username}.",
+      "lastLoginDate": "The last time you logged in was on {loginDate}.",
+      "registrationDate": "You created your account on {registrationDate}."
+    },
+    "playerInformation": {
+      "title": "Player information",
+      "name": "The name of your character is {name}."
+    }
+  }
+}

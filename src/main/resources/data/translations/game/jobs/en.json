@@ -1,0 +1,60 @@
+{
+  "title": "jobs",
+  "navigation": {
+    "fields": "Fields",
+    "facilities": "Facilities"
+  },
+  "facilities": {
+    "title": "Facilities",
+    "assignedMonkMessage": "There are {monkAmount} monks assigned here.",
+    "noWorkingMonkMessage": "They are currently not working.",
+    "workingMonkMessage": "They are currently working.",
+    "noFacilitiesMessage": "There are no facilities yet."
+  },
+  "fields": {
+    "title": "Fields",
+    "noWorkingMonkMessage": "There are no monks working here.",
+    "workingMonkMessage": "There are {monkAmount} monks working here.",
+    "monkBonusMessage": "This results in a {monkBonus} bonus.",
+    "noFieldsMessage": "You don't have any fields yet.",
+    "buyFieldButton": "Buy field"
+  },
+  "field": {
+    "title": "{resource} field",
+    "noResourceTitle": "Plain field",
+    "seedToSow": "Choose seeds to sow:",
+    "noSeeds": "You don't have any seeds.",
+    "configuration": {
+      "title": "Configuration",
+      "initialValue": "Initial value:",
+      "currentValue": "Current value:",
+      "actions": {
+        "sellButton": "Sell",
+        "resetButton": "Reset"
+      }
+    },
+    "actions": {
+      "installButton": "Install",
+      "growButton": "Grow",
+      "harvestButton": "Harvest",
+      "optionsButton": "Options"
+    }
+  },
+  "facility": {
+    "actions": {
+      "fetchButton": "Fetch",
+      "collectButton": "Collect",
+      "optionsButton": "Options",
+      "storageButton": "Storage"
+    },
+    "options": {
+      "title": "Options",
+      "assignedMonk": "Assigned monks"
+    },
+    "storage": {
+      "title": "Storage",
+      "storageLevel": "Storage level: {storageLevel} / {storagecapacity}",
+      "emptyStorage": "There is nothing here yet."
+    }
+  }
+}

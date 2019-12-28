@@ -1,6 +1,7 @@
 package com.abbey.api.controllers;
 
 import com.abbey.api.models.authentication.LoginData;
+import com.abbey.api.models.authentication.User;
 import com.abbey.api.repositories.authentication.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,6 +58,10 @@ public class LoginController {
 
             HttpSession session = request.getSession(true);
             session.setAttribute(SPRING_SECURITY_CONTEXT_KEY, context);
+
+            User user = this.userRepository.getByUsername(username);
+            user.setLastLoginDate(new Date());
+            this.userRepository.save(user);
 
             Map<Object, Object> model = new HashMap<>();
             model.put("success", true);

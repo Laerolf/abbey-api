@@ -64,19 +64,19 @@ public class RegisterController {
                 Department fieldsDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Fields")
+                        .name("fields")
                         .build();
 
                 Department facilitiesDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Facilities")
+                        .name("facilities")
                         .build();
 
                 Department breweryDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Brewery")
+                        .name("brewery")
                         .build();
 
                 Map<String, Department> departments = new HashMap<>();

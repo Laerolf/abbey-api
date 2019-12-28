@@ -1,0 +1,10 @@
+{
+  "title": "Workshop",
+  "navigation": {
+    "workbench": "Workbench"
+  },
+  "workbenchSlot": {
+    "resource": "Resource",
+    "amount": "Amount"
+  }
+}

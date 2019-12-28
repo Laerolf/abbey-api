@@ -1,0 +1,16 @@
+{
+  "title": "Storybook",
+  "actions": {
+    "buyBeerButton": "Buy a beer",
+    "noBuyBeerButton": "Don't buy a beer",
+    "listenToStoryButton": "Yes",
+    "noListenToStoryButton": "No",
+    "genderMaleButton": "Boy",
+    "genderFemaleButton": "Girl",
+    "likeStoryButton": "Yes",
+    "noLikeStoryButton": "No",
+    "endStoryButton": "Bye"
+  },
+  "nameFieldLabel": "My name is",
+  "placeFieldLabel": "I would like to be in"
+}

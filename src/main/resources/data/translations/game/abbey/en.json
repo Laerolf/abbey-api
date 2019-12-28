@@ -1,0 +1,18 @@
+{
+  "title": "Abbey",
+  "description": "Here you can manage your monks.",
+  "chores": {
+    "previous": "Previous chore: {choreName}",
+    "current": "Current chore: {choreName}",
+    "next": "Next chore: {choreName}"
+  },
+  "monksCurrentlyWorking": "There are currently {totalMonksAmount} monks in your abbey.<br/>{occupiedMonks} monks are busy.",
+  "departments": {
+    "brewery": "brewery",
+    "fields": "fields",
+    "facilities": "facilities"
+  },
+  "department": {
+    "monkAmount": "amount of monks"
+  }
+}

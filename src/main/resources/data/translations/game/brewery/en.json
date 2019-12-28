@@ -1,0 +1,53 @@
+{
+  "title": "brewery",
+  "navigation": {
+    "bookOfRecipes": "book of recipes",
+    "brew": "brew"
+  },
+  "breweryProcessors": {
+    "Mashing tun": "mashing tun",
+    "Kettle": "kettle",
+    "Filter bucket": "filter bucket",
+    "Fermentation tank": "fermentation tank"
+  },
+  "breweryProcessor": {
+    "input": {
+      "title": "Input"
+    },
+    "output": {
+      "title": "Output"
+    },
+    "gain": {
+      "overviewMessage": "You got {outputQuantity} {outputResource}!",
+      "detailMessage": "Regular gain: {outputQuantity} {outputResource}"
+    },
+    "buttons": {
+      "gain": "Gain",
+      "process": "Process",
+      "auto": "Auto"
+    }
+  },
+  "bookOfRecipes": {
+    "title": "book of recipes",
+    "selectedRecipeMessage": "Currently your brewery is bound to make \"{selectedRecipe}\".",
+    "noSelectedRecipeMessage": "Your brewery doesn't have a recipe to brew.<br/>Select one to start brewing.",
+    "recipes": {
+      "title": "Recipes"
+    },
+    "recipe": {
+      "description": "description",
+      "discoveredMessage": "Discovered by {discoverer},<br/>{discoverDate}.",
+      "ingredients": "ingredients",
+      "details": "details",
+      "category": "Category: {category}",
+      "alcoholLevel" : "Alcohol percentage:<br/>{alcoholLevel}"
+    }
+  },
+  "brew": {
+    "title": "brew",
+    "noBrewingMonksMessage": "There are no monks working here.",
+    "brewingMonksMessage": "There are {monkAmount} working here.<br/>This results in a {monkBonus} bonus.",
+    "noSelectedRecipeMessage": "Select a recipe in the book of recipes,<br/> your monks don't know what to brew yet!",
+    "noEquipmentMessage": "You don't have any equipment yet!"
+  }
+}
