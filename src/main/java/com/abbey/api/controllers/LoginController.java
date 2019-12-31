@@ -27,7 +27,7 @@ import static org.springframework.security.web.context.HttpSessionSecurityContex
 
 @RestController
 @CrossOrigin(origins = "http://localhost:8080", maxAge = 3600, allowCredentials = "true")
-@RequestMapping(value = "/login")
+@RequestMapping(value = "/api/login")
 public class LoginController {
 
     private Logger logger = LoggerFactory.getLogger(getClass());

@@ -9,6 +9,7 @@ import com.abbey.api.repositories.authentication.UserRepository;
 import com.abbey.api.repositories.game.FacilityRepository;
 import com.abbey.api.repositories.game.GameRepository;
 import com.abbey.api.repositories.game.PlayerRepository;
+import com.abbey.api.repositories.game.ProcessorRepository;
 import com.abbey.api.services.UserService;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
@@ -25,15 +26,14 @@ public class RegisterController {
 
     @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private GameRepository gameRepository;
-
     @Autowired
     private PlayerRepository playerRepository;
-
     @Autowired
     private FacilityRepository facilityRepository;
+    @Autowired
+    private ProcessorRepository processorRepository;
 
     @Autowired
     private DataLoader dataLoader;
@@ -73,6 +73,12 @@ public class RegisterController {
                         .name("facilities")
                         .build();
 
+                Department processorDepartment = Department.builder()
+                        ._id(ObjectId.get().toHexString())
+                        .monks(0)
+                        .name("processors")
+                        .build();
+
                 Department breweryDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
@@ -83,6 +89,7 @@ public class RegisterController {
 
                 departments.put("fields", fieldsDepartment);
                 departments.put("facilities", facilitiesDepartment);
+                departments.put("processors", processorDepartment);
                 departments.put("brewery", breweryDepartment);
 
                 // ABBEY > SCHEDULE
@@ -174,6 +181,10 @@ public class RegisterController {
 
                 List<Facility> facilities = this.facilityRepository.findAll();
 
+                // PROCESSORS
+
+                List<Processor> processors = this.processorRepository.findAll();
+
                 // BREWERY
 
                 Brewery brewery = Brewery.builder()
@@ -197,6 +208,7 @@ public class RegisterController {
                         ._id(ObjectId.get().toHexString())
                         .abbey(abbey)
                         .facilities(facilities)
+                        .processors(processors)
                         .brewery(brewery)
                         .story(story)
                         .workbench(workbench)

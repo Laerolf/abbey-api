@@ -1,0 +1,16 @@
+{
+  "title": "Verhaal",
+  "actions": {
+    "buyBeerButton": "Koop een biertje",
+    "noBuyBeerButton": "Koop geen biertje",
+    "listenToStoryButton": "Ja",
+    "noListenToStoryButton": "Nee",
+    "genderMaleButton": "Jongen",
+    "genderFemaleButton": "Meisje",
+    "likeStoryButton": "Ja",
+    "noLikeStoryButton": "Nee",
+    "endStoryButton": "Daag"
+  },
+  "nameFieldLabel": "Mijn naam is",
+  "placeFieldLabel": "Ik ben graag in"
+}

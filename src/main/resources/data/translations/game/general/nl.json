@@ -1,0 +1,9 @@
+{
+  "name": "Abbey",
+  "donate": "Doneren",
+  "greeting": "Hallo {name}",
+  "unknownUser": "vreemdeling",
+  "actions": {
+    "logOutButton": "Uitloggen"
+  }
+}

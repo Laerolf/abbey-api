@@ -40,7 +40,7 @@
       "ingredients": "ingredients",
       "details": "details",
       "category": "Category: {category}",
-      "alcoholLevel" : "Alcohol percentage:<br/>{alcoholLevel}"
+      "alcoholLevel" : "Alcohol percentage: {alcoholLevel}"
     }
   },
   "brew": {

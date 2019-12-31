@@ -1,0 +1,19 @@
+{
+  "title": "Abdij",
+  "description": "Hier kun je je monniken beheren.",
+  "chores": {
+    "previous": "Vorige taak: {choreName}",
+    "current": "Huidige taak: {choreName}",
+    "next": "Volgende taak: {choreName}"
+  },
+  "monksCurrentlyWorking": "Momenteel zijn er {totalMonksAmount} monniken in je abdij.<br/>{occupiedMonks} monniken zijn bezet.",
+  "departments": {
+    "brewery": "brouwerij",
+    "fields": "velden",
+    "facilities": "bronnen",
+    "processors": "installaties"
+  },
+  "department": {
+    "monkAmount": "aantal monniken"
+  }
+}

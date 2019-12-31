@@ -26,6 +26,9 @@ public class Game {
     private List<Facility> facilities = new ArrayList<>();
 
     @Builder.Default
+    private List<Processor> processors = new ArrayList<>();
+
+    @Builder.Default
     private Map<String, ResourceQuantity> stock = new HashMap<>();
 
     private Story story;
@@ -57,6 +60,13 @@ public class Game {
     }
     public void setFields(List<Field> fields) {
         this.fields = fields;
+    }
+
+    public List<Processor> getProcessors() {
+        return this.processors;
+    }
+    public void setProcessors(List<Processor> processors) {
+        this.processors = processors;
     }
 
     public List<Facility> getFacilities() {

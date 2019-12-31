@@ -1,0 +1,15 @@
+{
+  "content": {
+    "title": "Hier kun je alles vinden wat wij weten over jou.",
+    "userInformation": {
+      "title": "Gebruikersinformatie",
+      "username": "Je gebruikersnaam is {username}.",
+      "lastLoginDate": "De laatste keer dat je aangemeld werd was op {loginDate}.",
+      "registrationDate": "Je maakte je account aan op {registrationDate}."
+    },
+    "playerInformation": {
+      "title": "Spelers informatie",
+      "name": "De naam van je persoonlijkheid is {name}."
+    }
+  }
+}

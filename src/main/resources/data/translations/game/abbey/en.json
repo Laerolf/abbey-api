@@ -10,7 +10,8 @@
   "departments": {
     "brewery": "brewery",
     "fields": "fields",
-    "facilities": "facilities"
+    "facilities": "facilities",
+    "processors": "processors"
   },
   "department": {
     "monkAmount": "amount of monks"

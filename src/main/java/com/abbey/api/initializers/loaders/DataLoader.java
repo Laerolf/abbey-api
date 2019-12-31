@@ -30,6 +30,8 @@ public class DataLoader {
     @Autowired
     private FacilityRepository facilityRepository;
     @Autowired
+    private ProcessorRepository processorRepository;
+    @Autowired
     private BreweryProcessorRepository breweryProcessorRepository;
     @Autowired
     private RecipeRepository recipeRepository;
@@ -52,6 +54,7 @@ public class DataLoader {
         this.dataPaths.put("breweryProcessors", "/data/breweryProcessors.json");
         this.dataPaths.put("transmutations", "/data/transmutations.json");
         this.dataPaths.put("facilities", "/data/facilities.json");
+        this.dataPaths.put("processors", "/data/processors.json");
         this.dataPaths.put("vendors", "/data/vendors.json");
         this.dataPaths.put("recipes", "/data/recipes.json");
         this.dataPaths.put("roles", "/data/roles.json");
@@ -77,6 +80,10 @@ public class DataLoader {
                     this.loadFacilities(entry.getKey(), entry.getValue());
                     break;
 
+                case "processors":
+                    this.loadProcessors(entry.getKey(), entry.getValue());
+                    break;
+
                 case "vendors":
                     this.loadVendors(entry.getKey(), entry.getValue());
                     break;
@@ -93,6 +100,7 @@ public class DataLoader {
 
         this.loadRoles(this.dataPaths.get("roles"));
         this.loadTranslation("en");
+        this.loadTranslation("nl");
     }
 
     private void loadResources(String elementDataPath) {
@@ -406,6 +414,35 @@ public class DataLoader {
                     facility.setTotalProcessTime(1000 * 60);
 
                     this.facilityRepository.save(facility);
+                }
+            });
+        } catch (IOException exception) {
+            this.logger.error("Unable to load all {}: {}", elementName, exception.getMessage());
+        }
+    }
+
+    private void loadProcessors(String elementName, String elementDataPath) {
+
+        ObjectMapper mapper = new ObjectMapper();
+        TypeReference<List<Processor>> typeReference = new TypeReference<List<Processor>>() {
+        };
+        InputStream inputStream = TypeReference.class.getResourceAsStream(elementDataPath);
+        try {
+            List<Processor> processors = mapper.readValue(inputStream, typeReference);
+
+            processors.forEach(processor -> {
+                if (this.processorRepository.getByName(processor.getName()) == null) {
+                    this.logger.info("CREATING {}: {}", elementName.toUpperCase(), processor.getName());
+
+                    List<String> mappedInput = new ArrayList<>();
+
+                    processor.getInput().forEach(resource -> {
+                        mappedInput.add(this.resourceRepository.getByMapName(resource).get_id());
+                    });
+
+                    processor.setInput(mappedInput);
+
+                    this.processorRepository.save(processor);
                 }
             });
         } catch (IOException exception) {

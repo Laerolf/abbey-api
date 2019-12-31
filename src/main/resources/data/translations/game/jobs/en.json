@@ -2,7 +2,8 @@
   "title": "jobs",
   "navigation": {
     "fields": "Fields",
-    "facilities": "Facilities"
+    "facilities": "Facilities",
+    "processors": "Processors"
   },
   "facilities": {
     "title": "Facilities",
@@ -10,6 +11,13 @@
     "noWorkingMonkMessage": "They are currently not working.",
     "workingMonkMessage": "They are currently working.",
     "noFacilitiesMessage": "There are no facilities yet."
+  },
+  "processors": {
+    "title": "Processors",
+    "assignedMonkMessage": "There are {monkAmount} monks assigned here.",
+    "noWorkingMonkMessage": "They are currently not working.",
+    "workingMonkMessage": "They are currently working.",
+    "noProcessorsMessage": "There are no processors yet."
   },
   "fields": {
     "title": "Fields",
@@ -56,5 +64,20 @@
       "storageLevel": "Storage level: {storageLevel} / {storagecapacity}",
       "emptyStorage": "There is nothing here yet."
     }
+  },
+  "processor": {
+    "input": {
+      "title": "Input",
+      "noInputOptions": "Come back when you have more resources in stock.",
+      "resource": "Resource",
+      "amount": "Amount"
+    },
+    "output": {
+      "title": "Output",
+      "resource": "Resource",
+      "amount": "Amount",
+      "noProcess": "There is no process possible."
+    },
+    "process": "Process"
   }
 }

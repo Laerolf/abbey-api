@@ -1,0 +1,10 @@
+{
+  "title": "Werkplaats",
+  "navigation": {
+    "workbench": "Werkbank"
+  },
+  "workbenchSlot": {
+    "resource": "Grondstof",
+    "amount": "Aantal"
+  }
+}
