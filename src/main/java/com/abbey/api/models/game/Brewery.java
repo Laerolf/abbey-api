@@ -15,17 +15,14 @@ public class Brewery {
     @Id
     private String _id;
 
-    private String recipe;
-    private String beer;
-
-    private Map<String, BreweryProcessor> breweryProcessors;
+    private String selectedRecipe;
+    private String selectedBeer;
 
     @Builder
     public Brewery(String _id, String recipe, String beer, Map<String, BreweryProcessor> breweryProcessors){
         this._id = _id;
-        this.recipe = recipe;
-        this.beer = beer;
-        this.breweryProcessors = breweryProcessors;
+        this.selectedRecipe = recipe;
+        this.selectedBeer = beer;
     }
 
     public String get_id() {
@@ -36,23 +33,16 @@ public class Brewery {
     }
 
     public String getRecipe() {
-        return this.recipe;
+        return this.selectedRecipe;
     }
     public void setRecipe(String recipe) {
-        this.recipe = recipe;
+        this.selectedRecipe = recipe;
     }
 
     public String getBeer() {
-        return this.beer;
+        return this.selectedBeer;
     }
     public void setBeer(String beer) {
-        this.beer = beer;
-    }
-
-    public Map<String, BreweryProcessor> getBreweryProcessors() {
-        return this.breweryProcessors;
-    }
-    public void setBreweryProcessors(Map<String, BreweryProcessor> breweryProcessors) {
-        this.breweryProcessors = breweryProcessors;
+        this.selectedBeer = beer;
     }
 }
