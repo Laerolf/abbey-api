@@ -1,8 +1,6 @@
 package com.abbey.api.controllers;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,9 +18,6 @@ public class LogoutController {
 
     @PostMapping(value = "")
     public ResponseEntity logout(HttpServletRequest request, HttpServletResponse response) {
-
-        request.getSession().invalidate();
-
         return ResponseEntity.ok().body("logout");
     }
 

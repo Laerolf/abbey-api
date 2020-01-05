@@ -1,0 +1,27 @@
+{
+  "title": "Marketplace",
+  "navigation": {
+    "vendors": "Vendors"
+  },
+  "vendors": {
+    "title": "Vendors"
+  },
+  "vendor": {
+    "actions": {
+      "buyButton": "Buy",
+      "sellButton": "Sell",
+      "sell": {
+        "resourceMessage": "I would like to sell",
+        "amountMessage": "I would like to sell",
+        "acceptDealButton": "Accept",
+        "declineDealButton": "Decline"
+      },
+      "buy": {
+        "resourceMessage": "I would like to buy",
+        "amountMessage": "I would like to buy",
+        "acceptDealButton": "Accept",
+        "declineDealButton": "Decline"
+      }
+    }
+  }
+}

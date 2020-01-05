@@ -1,0 +1,9 @@
+{
+  "title": "Register",
+  "username": "Username",
+  "password": "Password",
+  "actions": {
+    "registerButton": "Register",
+    "loginButton": "Login"
+  }
+}

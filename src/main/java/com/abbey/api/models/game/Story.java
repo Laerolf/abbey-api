@@ -5,9 +5,6 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Document(collection = "stories")
@@ -18,13 +15,8 @@ public class Story {
     @Id
     private String _id;
 
-    @Builder.Default
     private Map<String, String> chapters;
-
-    @Builder.Default
     private Map<String, String> randomFacts;
-
-    @Builder.Default
     private Map<String, String> abbotNames;
 
     private StoryAnswers storyAnswers;

@@ -2,18 +2,23 @@ package com.abbey.api.controllers;
 
 import com.abbey.api.initializers.loaders.DataLoader;
 import com.abbey.api.models.Feedback;
+import com.abbey.api.models.authentication.ERole;
 import com.abbey.api.models.authentication.RegistrationData;
+import com.abbey.api.models.authentication.Role;
 import com.abbey.api.models.authentication.User;
 import com.abbey.api.models.game.*;
+import com.abbey.api.repositories.authentication.RoleRepository;
 import com.abbey.api.repositories.authentication.UserRepository;
 import com.abbey.api.repositories.game.FacilityRepository;
 import com.abbey.api.repositories.game.GameRepository;
 import com.abbey.api.repositories.game.PlayerRepository;
-import com.abbey.api.services.UserService;
+import com.abbey.api.repositories.game.ProcessorRepository;
 import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -24,28 +29,29 @@ import java.util.*;
 public class RegisterController {
 
     @Autowired
-    private UserRepository userRepository;
+    PasswordEncoder encoder;
 
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private RoleRepository roleRepository;
     @Autowired
     private GameRepository gameRepository;
-
     @Autowired
     private PlayerRepository playerRepository;
-
     @Autowired
     private FacilityRepository facilityRepository;
+    @Autowired
+    private ProcessorRepository processorRepository;
 
     @Autowired
     private DataLoader dataLoader;
-
-    @Autowired
-    private UserService userService;
 
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @PostMapping(value = "")
     public @ResponseBody
-    Feedback register(@RequestBody RegistrationData registrationData) {
+    ResponseEntity register(@RequestBody RegistrationData registrationData) {
 
         this.logger.info("USER REGISTRATION: {}", registrationData.getUsername());
 
@@ -64,25 +70,32 @@ public class RegisterController {
                 Department fieldsDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Fields")
+                        .name("fields")
                         .build();
 
                 Department facilitiesDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Facilities")
+                        .name("facilities")
+                        .build();
+
+                Department processorDepartment = Department.builder()
+                        ._id(ObjectId.get().toHexString())
+                        .monks(0)
+                        .name("processors")
                         .build();
 
                 Department breweryDepartment = Department.builder()
                         ._id(ObjectId.get().toHexString())
                         .monks(0)
-                        .name("Brewery")
+                        .name("brewery")
                         .build();
 
                 Map<String, Department> departments = new HashMap<>();
 
                 departments.put("fields", fieldsDepartment);
                 departments.put("facilities", facilitiesDepartment);
+                departments.put("processors", processorDepartment);
                 departments.put("brewery", breweryDepartment);
 
                 // ABBEY > SCHEDULE
@@ -174,6 +187,10 @@ public class RegisterController {
 
                 List<Facility> facilities = this.facilityRepository.findAll();
 
+                // PROCESSORS
+
+                List<Processor> processors = this.processorRepository.findAll();
+
                 // BREWERY
 
                 Brewery brewery = Brewery.builder()
@@ -197,6 +214,7 @@ public class RegisterController {
                         ._id(ObjectId.get().toHexString())
                         .abbey(abbey)
                         .facilities(facilities)
+                        .processors(processors)
                         .brewery(brewery)
                         .story(story)
                         .workbench(workbench)
@@ -215,23 +233,57 @@ public class RegisterController {
                 // USER
 
                 User newUser = User.builder()
-                        ._id(ObjectId.get().toHexString())
+                        .id(ObjectId.get().toHexString())
                         .username(registrationData.getUsername())
-                        .password(registrationData.getPassword())
+                        .password(encoder.encode(registrationData.getPassword()))
                         .registrationDate(new Date())
                         .gameId(newGame.get_id())
                         .playerId(newPlayer.get_id())
                         .build();
 
+                Set<Role> strRoles = registrationData.getRoles();
+                Set<Role> roles = new HashSet<>();
+
+                if (strRoles == null) {
+                    try {
+                        Role userRole = roleRepository.findByName(ERole.ROLE_USER);
+                        roles.add(userRole);
+                    }
+                    catch (RuntimeException exception){
+                        throw new RuntimeException("Error: Role is not found.");
+                    }
+                } else {
+                    strRoles.forEach(role -> {
+                        if (role.getName().name().equals("admin")) {
+                            try {
+                                Role userRole = roleRepository.findByName(ERole.ROLE_ADMIN);
+                                roles.add(userRole);
+                            } catch (RuntimeException exception) {
+                                throw new RuntimeException("Error: Role is not found.");
+                            }
+                        } else {
+                            try {
+                                Role userRole = roleRepository.findByName(ERole.ROLE_USER);
+                                roles.add(userRole);
+                            } catch (RuntimeException exception) {
+                                throw new RuntimeException("Error: Role is not found.");
+                            }
+                        }
+                    });
+                }
+
+                newUser.setRoles(roles);
+
                 gameRepository.save(newGame);
                 playerRepository.save(newPlayer);
                 userRepository.save(newUser);
-                userService.saveUser(newUser);
 
                 feedback.setSuccessful(true);
                 feedback.setMessage("Successfully created a new account.");
 
                 this.logger.info("USER REGISTRATION: {}: SUCCESSFUL", registrationData.getUsername());
+
+                return ResponseEntity.ok(feedback);
 
             } else {
 
@@ -239,9 +291,10 @@ public class RegisterController {
 
                 this.logger.error("USER REGISTRATION: {}: FAILED: {}", registrationData.getUsername(), feedback.getMessage().toUpperCase());
 
+                return ResponseEntity.badRequest().body(feedback);
+
             }
 
-            return feedback;
         } catch (Exception exception) {
 
             feedback.setSuccessful(false);
@@ -249,7 +302,7 @@ public class RegisterController {
 
             this.logger.error("USER REGISTRATION: {}: FAILED: {}", registrationData.getUsername(), exception);
 
-            return feedback;
+            return ResponseEntity.badRequest().body(feedback);
         }
 
     }

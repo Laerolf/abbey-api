@@ -4,22 +4,19 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @Data
 public class FacilityStorage {
 
     private int capacity;
-
-    @Builder.Default
-    private List<ResourceQuantity> items = new ArrayList<>();
+    private List<ResourceQuantity> items;
 
     @Builder
     public FacilityStorage(){
         this.capacity = 100;
+        this.items = new ArrayList<>();
     }
 
     public int getCapacity() {

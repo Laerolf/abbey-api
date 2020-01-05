@@ -2,16 +2,17 @@ package com.abbey.api.models.authentication;
 
 import lombok.Builder;
 
-import java.util.Map;
+import java.util.Set;
 
-@Builder
 public class RegistrationData {
 
     private String venueName;
     private String username;
     private String password;
     private String confirmPassword;
+    private Set roles;
 
+    @Builder
     public RegistrationData(String venueName, String username, String password, String confirmPassword){
         this.venueName = venueName;
         this.username = username;
@@ -33,5 +34,9 @@ public class RegistrationData {
 
     public String getConfirmPassword() {
         return this.confirmPassword;
+    }
+
+    public Set<Role> getRoles(){
+        return this.roles;
     }
 }

@@ -1,0 +1,61 @@
+{
+  "title": "jobs",
+  "navigation": {
+    "fields": "Velden",
+    "facilities": "Facilities",
+    "processors": "Processors"
+  },
+  "facilities": {
+    "title": "Bronnen",
+    "assignedMonkMessage": "Er zijn {monkAmount} monniken toegewezen hier.",
+    "noWorkingMonkMessage": "Ze zijn momenteel niet aan het werk.",
+    "workingMonkMessage": "Ze zijn momenteel aan het werk.",
+    "noFacilitiesMessage": "Er zijn geen bronnen."
+  },
+  "fields": {
+    "title": "Velden",
+    "noWorkingMonkMessage": "Er zijn geen monniken hier.",
+    "workingMonkMessage": "Er zijn {monkAmount} monniken aan het werk hier.",
+    "monkBonusMessage": "Dit geeft een {monkBonus} bonus.",
+    "noFieldsMessage": "Je hebt nog geen velden.",
+    "buyFieldButton": "Veld kopen"
+  },
+  "field": {
+    "title": "{resource} veld",
+    "noResourceTitle": "Open veld",
+    "seedToSow": "Kies zaad om te zaaien:",
+    "noSeeds": "Je hebt nog geen zaden.",
+    "configuration": {
+      "title": "Instellingen",
+      "initialValue": "Start waarde:",
+      "currentValue": "Huidige waarde:",
+      "actions": {
+        "sellButton": "Verkopen",
+        "resetButton": "initialiseren"
+      }
+    },
+    "actions": {
+      "installButton": "Instellen",
+      "growButton": "Groei",
+      "harvestButton": "Oogsten",
+      "optionsButton": "Instellingen"
+    }
+  },
+  "facility": {
+    "actions": {
+      "fetchButton": "Werken",
+      "collectButton": "Ophalen",
+      "optionsButton": "Instellingen",
+      "storageButton": "Voorraad"
+    },
+    "options": {
+      "title": "Instellingen",
+      "assignedMonk": "Toegewezen monniken"
+    },
+    "storage": {
+      "title": "Voorraad",
+      "storageLevel": "Voorraad niveau: {storageLevel} / {storagecapacity}",
+      "emptyStorage": "Er is hier nog niets."
+    }
+  }
+}

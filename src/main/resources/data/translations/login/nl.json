@@ -1,0 +1,9 @@
+{
+  "title": "Inloggen",
+  "username": "Gebruikersnaam",
+  "password": "Wachtwoord",
+  "actions": {
+    "loginButton": "Inloggen",
+    "registerButton": "Registreren"
+  }
+}

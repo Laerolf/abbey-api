@@ -16,7 +16,7 @@ public class Translation {
     private String _id;
 
     private String language;
-    private Map<String, Map<String,String>> content;
+    private Map<String, Map<String, Object>> content;
 
     public String get_id() {
         return this._id;
@@ -32,10 +32,10 @@ public class Translation {
         this.language = language;
     }
 
-    public Map<String, Map<String, String>> getContent() {
+    public Map<String, Map<String, Object>> getContent() {
         return this.content;
     }
-    public void setContent(Map<String, Map<String, String>> content) {
+    public void setContent(Map<String, Map<String, Object>> content) {
         this.content = content;
     }
 }

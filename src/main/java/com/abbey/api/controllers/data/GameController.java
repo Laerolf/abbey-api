@@ -2,7 +2,6 @@ package com.abbey.api.controllers.data;
 
 import com.abbey.api.models.authentication.User;
 import com.abbey.api.models.game.Abbey;
-import com.abbey.api.models.game.Facility;
 import com.abbey.api.models.game.Game;
 import com.abbey.api.models.game.ResourceQuantity;
 import com.abbey.api.repositories.authentication.UserRepository;
@@ -16,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static org.springframework.http.ResponseEntity.ok;

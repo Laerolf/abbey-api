@@ -1,0 +1,53 @@
+{
+  "title": "brouwerij",
+  "navigation": {
+    "bookOfRecipes": "receptenboek",
+    "brew": "brouw"
+  },
+  "breweryProcessors": {
+    "Mashing tun": "mashing tun",
+    "Kettle": "kettle",
+    "Filter bucket": "filter bucket",
+    "Fermentation tank": "fermentation tank"
+  },
+  "breweryProcessor": {
+    "input": {
+      "title": "Input"
+    },
+    "output": {
+      "title": "Output"
+    },
+    "gain": {
+      "overviewMessage": "Je hebt {outputQuantity} {outputResource} verkregen!",
+      "detailMessage": "Normale opbrengst: {outputQuantity} {outputResource}"
+    },
+    "buttons": {
+      "gain": "Verkrijgen",
+      "process": "Verwerken",
+      "auto": "Auto"
+    }
+  },
+  "bookOfRecipes": {
+    "title": "Receptenboek",
+    "selectedRecipeMessage": "Momenteel is je abdij van plan om \"{selectedRecipe}\" te brouwen.",
+    "noSelectedRecipeMessage": "Je abdij heeft geen recept.<br/>Selecteer één om te brouwen.",
+    "recipes": {
+      "title": "Recepten"
+    },
+    "recipe": {
+      "description": "beschrijving",
+      "discoveredMessage": "Ontdekt door {discoverer},<br/>{discoverDate}.",
+      "ingredients": "ingrediënten",
+      "details": "details",
+      "category": "Categorie: {category}",
+      "alcoholLevel" : "Alcohol percentage: {alcoholLevel}"
+    }
+  },
+  "brew": {
+    "title": "brouw",
+    "noBrewingMonksMessage": "Er zijn geen monniken hier",
+    "brewingMonksMessage": "Er zijn {monkAmount} monniken aan het werk hier.<br/>Dit geeft een {monkBonus} bonus.",
+    "noSelectedRecipeMessage": "Selecteer een recept uit het receptenboek,<br/> je monniken weten niet wat te brouwen!",
+    "noEquipmentMessage": "Je hebt nog geen uitrusting!"
+  }
+}

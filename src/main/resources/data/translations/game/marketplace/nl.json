@@ -1,0 +1,27 @@
+{
+  "title": "Markt",
+  "navigation": {
+    "vendors": "Verkopers"
+  },
+  "vendors": {
+    "title": "Verkopers"
+  },
+  "vendor": {
+    "actions": {
+      "buyButton": "Kopen",
+      "sellButton": "Verkopen",
+      "sell": {
+        "resourceMessage": "Ik verkoop",
+        "amountMessage": "Ik verkoop",
+        "acceptDealButton": "Aanvaarden",
+        "declineDealButton": "Afwijzen"
+      },
+      "buy": {
+        "resourceMessage": "Ik koop",
+        "amountMessage": "Ik koop",
+        "acceptDealButton": "Aanvaarden",
+        "declineDealButton": "Afwijzen"
+      }
+    }
+  }
+}
