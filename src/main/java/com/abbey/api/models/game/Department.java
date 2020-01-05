@@ -3,7 +3,6 @@ package com.abbey.api.models.game;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,15 +15,14 @@ public class Department {
 
     private String name;
     private Integer monks;
-
-    @Builder.Default
-    private Map<String,Integer> assignedMonks = new HashMap<>();
+    private Map<String,Integer> assignedMonks;
 
     @Builder
     public Department(String _id, String name, Integer monks){
         this._id = _id;
         this.name = name;
         this.monks = monks;
+        this.assignedMonks = new HashMap<>();
     }
 
     public String get_id() {

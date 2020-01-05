@@ -1,6 +1,5 @@
 package com.abbey.api.models.game;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;

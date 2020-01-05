@@ -1,35 +1,42 @@
 package com.abbey.api.models.authentication;
 
-import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Entity;
+
+@Entity
 @Document(collection = "roles")
 @Data
 public class Role {
+
     @Id
-    private String _id;
-    private String role;
+    private String id;
 
-    @Builder
+    private ERole name;
+
     public Role() {
-        this._id = ObjectId.get().toHexString();
+        this.id = ObjectId.get().toHexString();
     }
 
-    public String get_Id() {
-        return _id;
+    public Role(ERole name) {
+        this.id = ObjectId.get().toHexString();
+        this.name = name;
     }
 
-    public void set_Id(String id) {
-        this._id = id;
+    public String getId() {
+        return id;
+    }
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getRole() {
-        return role;
+    public ERole getName() {
+        return name;
     }
-    public void setRole(String role) {
-        this.role = role;
+    public void setName(ERole name) {
+        this.name = name;
     }
 }

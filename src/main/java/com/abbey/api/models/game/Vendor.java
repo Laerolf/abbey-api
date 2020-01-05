@@ -1,6 +1,5 @@
 package com.abbey.api.models.game;
 
-import com.abbey.api.models.game.ItemForSale;
 import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;

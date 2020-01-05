@@ -331,8 +331,8 @@ public class DataLoader {
             List<Role> roles = mapper.readValue(inputStream, typeReference);
 
             roles.forEach(role -> {
-                if (this.roleRepository.findByRole(role.getRole()) == null) {
-                    this.logger.info("CREATING ROLES: {}", role.getRole());
+                if (this.roleRepository.findByName(role.getName()) == null) {
+                    this.logger.info("CREATING ROLES: {}", role.getName());
                     this.roleRepository.save(role);
                 }
             });

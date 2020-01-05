@@ -4,16 +4,19 @@ import lombok.Builder;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.*;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Document(collection = "users")
 @Builder
 public class User {
 
     @Id
-    private String _id;
+    private String id;
 
     private String username;
+    private String email;
     private String password;
     private Date registrationDate;
     private Date lastLoginDate;
@@ -22,13 +25,15 @@ public class User {
     private String playerId;
 
     private boolean enabled;
-    private Set<Role> roles;
 
-    public String get_id() {
-        return this._id;
+    @Builder.Default
+    private Set<Role> roles = new HashSet<>();
+
+    public String getId() {
+        return id;
     }
-    public void set_id(String _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -36,6 +41,13 @@ public class User {
     }
     public void setUserName(String username){
         this.username= username;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -81,7 +93,7 @@ public class User {
     }
 
     public Set<Role> getRoles(){
-        return this.roles;
+        return roles;
     }
     public void setRoles (Set<Role> roles){
         this.roles = roles;
